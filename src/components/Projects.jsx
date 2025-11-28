@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { assets, projectsData } from '../assets/assets'
+import { motion } from 'framer-motion'
+
 
 function Projects() {
 
@@ -29,7 +31,12 @@ function Projects() {
   }
 
   return (
-    <div className='container mx-auto py-4 pt-20 px-6 md:px-20 lg:px-32 my-20 w-full overflow-hidden' id='Projects'>
+    <motion.div
+      initial={{ opacity: 0, x: -200 }}
+      whileInView={{ opacity: 1.0, x: 0 }}
+      transition={{ duration: 1 }}
+      viewport={{ once: true }}
+      className='container mx-auto py-4 pt-20 px-6 md:px-20 lg:px-32 my-20 w-full' id='Projects'>
       <h1 className='text-2xl sm:text-4xl font-bold mb-2 text-center'>Projects <span className='underline underline-offset-4 decoration-1 under font-light'>Completed</span></h1>
       <p className='text-gray-500 max-w-80 text-center mb-8 mx-auto'>Crafting Spaces, Building Legacies-Expalore Our Portfolio</p>
 
@@ -52,14 +59,14 @@ function Projects() {
               <div className='absolute left-0 right-0 bottom-5 flex justify-center'>
                 <div className='inline-block bg-white w-3/4 px-4 py-2 shadow-md'>
                   <h2 className='font-semibold text-lg text-gray-800'>{project.title}</h2>
-                  <p className='text-gray-500 text-sm'>{project.price} <span></span> {project.location}</p>
+                  <p className='text-gray-500 text-sm'>{project.price} <span className='px-1 '>|</span> {project.location}</p>
                 </div>
               </div>
             </div>
           ))}
         </div>
       </div>
-    </div>
+    </motion.div>
   )
 }
 
