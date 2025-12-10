@@ -101,6 +101,3 @@ Check open issues before submitting to avoid duplicates.
 MIT License — see [LICENSE](LICENSE) for details.
 
 ---
-
-*Built with ❤️ by Saniru Dewmina.*
-
